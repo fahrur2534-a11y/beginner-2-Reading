@@ -1,127 +1,346 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About My Family - Writing Exercise</title>
+<title>Beginner Reading Task - My Favorite Breakfast</title>
 
 <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-    font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background:#f4f6f9;
+    font-family:Arial, sans-serif;
+    background:#f4f7fb;
+    padding:20px;
+    color:#333;
+    line-height:1.6;
 }
 
 .container{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,.1);
+    max-width:1100px;
+    margin:auto;
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
-h1,h2{
+h1{
+    text-align:center;
+    color:#2c3e50;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:25px;
+}
+
+.instructions{
+    background:#eef6ff;
+    border-left:5px solid #3498db;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+.reading-text{
+    background:#fafafa;
+    padding:20px;
+    border-radius:8px;
+    margin-bottom:30px;
+}
+
+.reading-text h2{
+    margin-bottom:15px;
     color:#2c3e50;
 }
 
-textarea{
-    width:100%;
-    min-height:120px;
-    padding:10px;
-    margin-top:10px;
+.question{
+    background:#fafafa;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:15px;
 }
 
-input{
-    padding:8px;
-    margin:5px;
+.question p{
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+label{
+    display:block;
+    margin:8px 0;
+    cursor:pointer;
 }
 
 button{
+    width:100%;
+    padding:15px;
     background:#3498db;
     color:white;
     border:none;
-    padding:12px 20px;
-    border-radius:5px;
+    border-radius:8px;
+    font-size:16px;
     cursor:pointer;
+    margin-top:20px;
 }
 
 button:hover{
     background:#2980b9;
 }
 
+#result{
+    margin-top:25px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+}
+
 .correct{
     color:green;
-    font-weight:bold;
 }
 
 .wrong{
     color:red;
-    font-weight:bold;
+}
+
+.answer-key{
+    margin-top:40px;
+    background:#f9f9f9;
+    padding:20px;
+    border-radius:10px;
+}
+
+.answer-key h2{
+    margin-bottom:15px;
+}
+
+.answer-key ol{
+    margin-left:20px;
+}
+
+.answer-key li{
+    margin-bottom:8px;
+}
+
+@media(max-width:768px){
+
+    .container{
+        padding:20px;
+    }
+
 }
 </style>
 </head>
+
 <body>
 
 <div class="container">
 
-<hr>
+<h1>BEGINNER READING TASK</h1>
 
-<h2>Part A: Fill in the blanks</h2>
+<div class="subtitle">
+Topic: My Favorite Breakfast
+</div>
 
-<p>1. Kelly lives in
-<input id="q1"></p>
+<div class="instructions">
+<strong>Instruction:</strong><br>
+Read the text carefully and choose the best answer (A, B, C, or D) for each question.
+</div>
 
-<p>2. Kelly's mother's name is
-<input id="q2"></p>
+<div class="reading-text">
 
-<p>3. Kelly's father works in a
-<input id="q3"></p>
+<h2>Text</h2>
 
-<p>4. Kelly's sister loves listening to
-<input id="q4"></p>
+<p>
+I love breakfast because it is the most important meal of the day. It gives me energy and helps me prepare for school and daily activities. Eating breakfast also helps me stay focused and active throughout the morning. That is why I never skip breakfast.
+</p>
 
-<p>5. Brandy is a pet
-<input id="q5"></p>
+<br>
 
-<button onclick="checkAnswers()">Check Answers</button>
+<p>
+My favorite breakfast is cereal with milk. I like the crunchiness of the cereal and how it tastes with the cold milk. It is delicious, easy to prepare, and healthy. I usually eat cereal before going to school because it is quick and filling.
+</p>
 
-<p id="result"></p>
+<br>
 
-<hr>
+<p>
+Sometimes, I also enjoy toast with jam. The sweetness of the jam on warm toast is comforting. My favorite flavor is strawberry jam because it tastes sweet and fresh. I often eat toast when I have more time in the morning.
+</p>
 
-<h2>Part B: Write About Your Family</h2>
+<br>
 
-<p>Write 5–8 sentences about your family.</p>
+<p>
+Another breakfast food that I like is eggs. I usually eat scrambled eggs with a little salt. They are fluffy, tasty, and good for my health. I also like drinking a glass of orange juice because it is refreshing and helps me start my day well.
+</p>
 
-<textarea placeholder="My name is..."></textarea>
+<br>
+
+<p>
+On special days, my mom makes pancakes for breakfast. They are fluffy and golden brown. I like to put syrup on them, and sometimes my mom adds fresh fruit such as bananas or strawberries. Pancakes are my favorite special breakfast because they are delicious and fun to eat.
+</p>
+
+</div>
+
+<form id="quizForm">
+
+<div class="question">
+<p>1. Why does the writer love breakfast?</p>
+<label><input type="radio" name="q1" value="A"> A. Because it is expensive</label>
+<label><input type="radio" name="q1" value="B"> B. Because it is the most important meal of the day</label>
+<label><input type="radio" name="q1" value="C"> C. Because it is difficult to make</label>
+<label><input type="radio" name="q1" value="D"> D. Because it is only eaten on weekends</label>
+</div>
+
+<div class="question">
+<p>2. What is the writer's favorite breakfast?</p>
+<label><input type="radio" name="q2" value="A"> A. Pizza</label>
+<label><input type="radio" name="q2" value="B"> B. Noodles</label>
+<label><input type="radio" name="q2" value="C"> C. Cereal with milk</label>
+<label><input type="radio" name="q2" value="D"> D. Fried rice</label>
+</div>
+
+<div class="question">
+<p>3. How does the writer describe cereal?</p>
+<label><input type="radio" name="q3" value="A"> A. Crunchy</label>
+<label><input type="radio" name="q3" value="B"> B. Sour</label>
+<label><input type="radio" name="q3" value="C"> C. Bitter</label>
+<label><input type="radio" name="q3" value="D"> D. Spicy</label>
+</div>
+
+<div class="question">
+<p>4. What flavor of jam does the writer like most?</p>
+<label><input type="radio" name="q4" value="A"> A. Orange</label>
+<label><input type="radio" name="q4" value="B"> B. Strawberry</label>
+<label><input type="radio" name="q4" value="C"> C. Grape</label>
+<label><input type="radio" name="q4" value="D"> D. Blueberry</label>
+</div>
+
+<div class="question">
+<p>5. How does the writer usually eat eggs?</p>
+<label><input type="radio" name="q5" value="A"> A. Fried</label>
+<label><input type="radio" name="q5" value="B"> B. Boiled</label>
+<label><input type="radio" name="q5" value="C"> C. Raw</label>
+<label><input type="radio" name="q5" value="D"> D. Scrambled</label>
+</div>
+
+<div class="question">
+<p>6. What drink does the writer enjoy?</p>
+<label><input type="radio" name="q6" value="A"> A. Tea</label>
+<label><input type="radio" name="q6" value="B"> B. Coffee</label>
+<label><input type="radio" name="q6" value="C"> C. Orange juice</label>
+<label><input type="radio" name="q6" value="D"> D. Soda</label>
+</div>
+
+<div class="question">
+<p>7. Who makes pancakes on special days?</p>
+<label><input type="radio" name="q7" value="A"> A. The writer</label>
+<label><input type="radio" name="q7" value="B"> B. The father</label>
+<label><input type="radio" name="q7" value="C"> C. The mother</label>
+<label><input type="radio" name="q7" value="D"> D. The friend</label>
+</div>
+
+<div class="question">
+<p>8. What does the writer put on pancakes?</p>
+<label><input type="radio" name="q8" value="A"> A. Cheese</label>
+<label><input type="radio" name="q8" value="B"> B. Syrup</label>
+<label><input type="radio" name="q8" value="C"> C. Butter</label>
+<label><input type="radio" name="q8" value="D"> D. Chocolate</label>
+</div>
+
+<div class="question">
+<p>9. What fruit may be added to the pancakes?</p>
+<label><input type="radio" name="q9" value="A"> A. Apples</label>
+<label><input type="radio" name="q9" value="B"> B. Mangoes</label>
+<label><input type="radio" name="q9" value="C"> C. Bananas</label>
+<label><input type="radio" name="q9" value="D"> D. Watermelons</label>
+</div>
+
+<div class="question">
+<p>10. What is the main topic of the text?</p>
+<label><input type="radio" name="q10" value="A"> A. Favorite breakfast foods</label>
+<label><input type="radio" name="q10" value="B"> B. School activities</label>
+<label><input type="radio" name="q10" value="C"> C. Sports hobbies</label>
+<label><input type="radio" name="q10" value="D"> D. Family vacations</label>
+</div>
+
+<button type="button" onclick="checkAnswers()">Submit Answers</button>
+
+</form>
+
+<div id="result"></div>
+
+<div class="answer-key">
+
+<h2>Answer Key</h2>
+
+<ol>
+<li>B</li>
+<li>C</li>
+<li>A</li>
+<li>B</li>
+<li>D</li>
+<li>C</li>
+<li>C</li>
+<li>B</li>
+<li>C</li>
+<li>A</li>
+</ol>
+
+</div>
 
 </div>
 
 <script>
+
 function checkAnswers(){
 
-let score = 0;
-
 const answers = {
-q1:"california",
-q2:"carmen",
-q3:"bank",
-q4:"music",
-q5:"dog"
+q1:"B",
+q2:"C",
+q3:"A",
+q4:"B",
+q5:"D",
+q6:"C",
+q7:"C",
+q8:"B",
+q9:"C",
+q10:"A"
 };
 
-for(let id in answers){
-let user = document.getElementById(id).value.trim().toLowerCase();
+let score = 0;
+let total = 10;
 
-if(user === answers[id]){
+for(let key in answers){
+
+const selected = document.querySelector(`input[name="${key}"]:checked`);
+
+if(selected && selected.value === answers[key]){
 score++;
 }
+
 }
 
-document.getElementById("result").innerHTML =
-"You got " + score + " out of 5 correct!";
+const percentage = Math.round((score/total)*100);
+
+const result = document.getElementById("result");
+
+result.innerHTML = `Your Score: ${score} / ${total} (${percentage}%)`;
+
+if(score >= 8){
+result.className = "correct";
+}else{
+result.className = "wrong";
 }
+
+}
+
 </script>
 
 </body>
